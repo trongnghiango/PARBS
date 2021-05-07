@@ -5,7 +5,7 @@
 On an Arch-based distribution as root, run the following:
 
 ```
-sh larbs.sh
+sh parbs.sh
 ```
 
 That's it.
