@@ -1,11 +1,10 @@
-# Prakash's Auto-Rice Bootstrapping Scripts (LARBS)
+# Prakash's Auto-Rice Bootstrapping Scripts (PARBS)
 
 ## Installation:
 
 On an Arch-based distribution as root, run the following:
 
 ```
-curl -LO larbs.xyz/larbs.sh
 sh larbs.sh
 ```
 
