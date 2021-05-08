@@ -8,6 +8,7 @@
 A,lf-git,"is an extensive terminal file manager that everyone likes."
 ranger,"is simple, vim-like file manager."
 ueberzug, "for previews of images in ranger."
+ffmpegthumbnailer, "is lightweight video thumbnailer that can be used by file managers."
 transmission-cli,"is a ast, easy, and free BitTorrent client."
 ,bc,"is used for a dropdown calculator."
 ,picom,"is for transparency and removing screen-tearing."
