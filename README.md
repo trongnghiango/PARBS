@@ -29,6 +29,10 @@ beginning of the script or giving the script one of these options:
 - `-p`: custom programs list/dependencies (local file or URL)
 - `-a`: a custom AUR helper (must be able to install with `-S` unless you
   change the relevant line in the script
+  
+ ## Screenshots
+![Homescreen](/screenshots/pic-selected-191103-2335-40.png?raw=true "Home Screen")
+![St Terminal neofetch](/screenshots/pic-selected-210514-1818-08.png?raw=true "neofetch")
 
 ### The `progs.csv` list
 
