@@ -234,6 +234,15 @@ dbus-uuidgen > /var/lib/dbus/machine-id
 	Option "Tapping" "on"
 EndSection' > /etc/X11/xorg.conf.d/40-libinput.conf
 
+# Monitor on right
+[ ! -f /etc/X11/xorg.conf.d/10-monitor.conf ] && printf 'Section "Monitor"
+        Identifier "DP1"
+	Option "PreferredMode" "1920x1080"
+    	Option        "TargetRefresh" "60"
+	Option "RightOf" "eDP1"
+	Option        "Position" "1920 0"
+EndSection' > /etc/X11/xorg.conf.d/10-monitor.conf
+
 # Fix fluidsynth/pulseaudio issue.
 grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth ||
 	echo "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" >> /etc/conf.d/fluidsynth
