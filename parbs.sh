@@ -235,15 +235,6 @@ dbus-uuidgen > /var/lib/dbus/machine-id
 	Option "Tapping" "on"
 EndSection' > /etc/X11/xorg.conf.d/40-libinput.conf
 
-# Monitor on right
-[ ! -f /etc/X11/xorg.conf.d/10-monitor.conf ] && printf 'Section "Monitor"
-        Identifier "DP1"
-	Option "PreferredMode" "1920x1080"
-    	Option        "TargetRefresh" "60"
-	Option "RightOf" "eDP1"
-	Option        "Position" "1920 0"
-EndSection' > /etc/X11/xorg.conf.d/10-monitor.conf
-
 # Fix fluidsynth/pulseaudio issue.
 grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth ||
 	echo "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" >> /etc/conf.d/fluidsynth
@@ -255,6 +246,14 @@ killall pulseaudio; sudo -u "$name" pulseaudio --start
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 newperms "%wheel ALL=(ALL) ALL #PARBS
 %wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm"
+
+# oh-my-zsh
+wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Clone powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # Last message! Install complete!
 finalize
