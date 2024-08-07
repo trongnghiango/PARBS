@@ -5,7 +5,7 @@
 ,xorg-twm, "is a tab window manager for X windows system."
 ,xorg-xclock, "is a xclock."
 ,xterm, "is a terminal emulator."
-,autorandr, "to auto-detect connected display hardware and load appropiate X11 setup using xrandr.",
+,autorandr, "to auto-detect connected display hardware and load appropiate X11 setup using xrandr."
 ,xf86-video-intel,"is graphics video drivers for X.org Intel i810/i830/i915/945G/G965+ machines."
 ,ttf-linux-libertine,"provides the sans and serif fonts for PARBS."
 A,lf-git,"is an extensive terminal file manager that everyone likes."
